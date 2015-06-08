@@ -82,8 +82,12 @@
     <ClCompile Include="simconmenu.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="resource.h" />
     <ClInclude Include="simconio.h" />
     <ClInclude Include="simconmenu.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SimCon.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
