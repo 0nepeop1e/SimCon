@@ -19,22 +19,22 @@ COORD GetConsoleCursorPosition(){
 	return binfo.dwCursorPosition;
 }
 
-SIMCON int scanf_vs(const char format[], ...){
+SIMCON int scanf_vs(const char * format, ...){
 	int ret;
 	va_list args;
 	va_start(args, format);
 	FlushConsoleInputBuffer(GetStdHandle(STD_INPUT_HANDLE));
-	ret = scanf_s(format, args);
+	ret = vscanf_s(format, args);
 	FlushConsoleInputBuffer(GetStdHandle(STD_INPUT_HANDLE));
 	va_end(args);
 	return ret;
 }
 
-SIMCON void _pause(const char format[], ...){
+SIMCON void _pause(const char * format, ...){
 	_putch('\n');
 	va_list args;
 	va_start(args, format);
-	printf(format, args);
+	vprintf(format, args);
 	va_end(args);
 	getch_s();
 }
@@ -314,10 +314,10 @@ SIMCON int getint(unsigned int digit, _Bool escape){
 	return ret;
 }
 
-SIMCON _Bool confirm(const char format[], ...){
+SIMCON _Bool confirm(const char * format, ...){
 	va_list args;
 	va_start(args, format);
-	printf(format, args);
+	vprintf(format, args);
 	va_end(args);
 	printf("(y/n)");
 	CHS c;

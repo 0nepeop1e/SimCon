@@ -22,12 +22,12 @@ typedef struct{
 /*
 	scanf with very save method, same as scanf_s, but this clear input buffer before and after.
 */
-SIMCON int scanf_vs(const char format[], ...);
+SIMCON int scanf_vs(const char * format, ...);
 
 /*
 	Pause with print format, parameters pls refer to printf.
 */
-SIMCON void _pause(const char format[], ...);
+SIMCON void _pause(const char * format, ...);
 
 /*
 	Pause the program, can press any key to continue.
@@ -74,7 +74,7 @@ SIMCON CHS getch_s();
 	Prompt a yes no confirmation to user with format, parameters pls refer to printf.
 	* return : boolean, true if yes
 */
-SIMCON _Bool confirm(const char format[], ...);
+SIMCON _Bool confirm(const char * format, ...);
 
 /*
 	Get Date
